@@ -1,14 +1,15 @@
 Introduction
 ============
 
-Welcome to SpringScan where we offer you services to Know Your Customer better and run background check on multiple grounds through APIs available with maximum accuracy and minimum turn around time
+Welcome to SpringScan where we offer you services to Know Your Customer better and run background check on multiple grounds through APIs available with maximum accuracy and minimum turn around 
+
 
 User Flow
 ----------
 
 Let's get started by understanding how SpringScan helps in solving multiple use cases of customers through this User Flow:
 
-		.. image:: https://pdf-reports-springrole.s3.amazonaws.com/5ea7ff114efb855d174ebbde/Userflow.jpeg
+		.. image:: https://pdf-reports-springrole.s3.amazonaws.com/5ea7ff114efb855d174ebbde/Userflow.jpeg  
 
 SpringScan API Use Cases
 ------------------------

@@ -70,23 +70,23 @@ We aim to provide clients with option to host their documents with us. The menti
 		  -H 'cache-control: no-cache' \
 		  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
 		  -F person_id=5df35fa819bd2a8d8663371c \
-		  -F 'ind_aadhaar=@/Users/karanahuja/Documents/My IDs/aadhaar.png'
+		  -F 'ind_aadhaar='https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2aadhar.png'
 
 **Example Response**
 	.. code::
 
-	{
-	    "ind_aadhaar": {
-	        "Location": "https://pdf-reports-springrole.s3.amazonaws.com/5df35fa819bd2a8d8663371c/adhaar.png",
-	        "Bucket": "pdf-reports-springrole",
-	        "originalName": "adhaar.png",
-	        "mimeType": "image/png"
-	    },
-	    "belongs_to": "5df35fa819bd2a8d8663371c",
-	    "s3_paths": "5ea04cb5af006f001c24ef52",
-	    "person_id": "5df35fa819bd2a8d8663371c",
-	    "is_new_person": false
-	}
+		{
+		"ind_aadhaar": {
+		    "Location": "https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2aadhar.png",
+		    "Bucket": "pdf-reports-springrole",
+		    "originalName": "adhaar.png",
+		    "mimeType": "image/png"
+		},
+			"belongs_to": "5df35fa819bd2a8d8663371c",
+			"s3_paths": "5ea04cb5af006f001c24ef52",
+			"person_id": "5df35fa819bd2a8d8663371c",
+			"is_new_person": false
+		}
 
 **Query Parameters**
 
@@ -192,52 +192,53 @@ Adds a new document to person or updates an existing document.
 		  -H 'cache-control: no-cache' \
 		  -d '{
 			"docType" = "ind_gst_certificate",
-			"document1" = "https://springverify-assets-id.s3.amazonaws.com/373/addressDoc-front"	
+			"document1" = "https://springverify-assets-id.s3.amazonaws.com/"	
 		    }'
 
 **Example Response**
  	.. code::
 
-	{
-	    "person": {
-	        "name": {
-	            "first": "MEGHA",
-	            "last": "BANSAL",
-	            "middle": "BANSAL"
-	        },
-	        "documents": {
-	            "ind_gst_certificate": {
-	                "result": {
-	                    "address": "FIRST AND FOURTH FLOOR, NO 20, LAKSHMI PLAZA, KRISHNANAGAR INDUSTRIAL LAYOUT, HOSUR ROAD,",
-	                    "constitution_of_business": "Private Limited Company",
-	                    "date_of_liability": "2017-07-24",
-	                    "gstin": "29AAYCS8889G1ZZ",
-	                    "is_provisional": false,
-	                    "legal_name": "SPRINGROLE INDIA PRIVATE LIMITED",
-	                    "pan_number": "AAYCS8889G",
-	                    "trade_name": "",
-	                    "type_of_registration": "Regular",
-	                    "valid_upto": "2017-07-24"
-	                },
-	                "manualObj": null,
-	                "status": "completed",
-	                "faceMatched": false,
-	                "matchResult": null,
-	                "matchedInformation": null,
-	                "govResult": null,
-	                "request_id": "53e6719c-9f8f-4018-b7ad-fd4b24478be2",
-	                "created_by": "automatic",
-	                "_id": "5ea04e0dad178e7135373021",
-	                "docType": "ind_gst_certificate",
-	                "document1": "https://springverify-assets-id.s3.amazonaws.com/373/addressDoc-front",
-	                "belongsTo": "5df35fa819bd2a8d8663371c",
-	                "createdAt": "2020-04-22T14:00:57.289Z",
-	                "updatedAt": "2020-04-22T14:00:57.289Z",
-	                "__v": 0
-	            }
-	        }
-	    }
-	}
+		{
+		"person": {
+		    "name": {
+		        "first": "MEGHA",
+		        "last": "BANSAL",
+		        "middle": "BANSAL"
+		    },
+		    "documents": {
+		        "ind_gst_certificate": {
+		            "result": {
+		                "address": "FIRST AND FOURTH FLOOR, NO 20, LAKSHMI PLAZA",
+		                "constitution_of_business": "Private Limited Company",
+		                "date_of_liability": "2017-07-24",
+		                "gstin": "29AAYCS8889G1BB",
+		                "is_provisional": false,
+		                "legal_name": "SPRINGROLE INDIA PRIVATE LIMITED",
+		                "pan_number": "AAYCS8889G",
+		                "trade_name": "",
+		                "type_of_registration": "Regular",
+		                "valid_upto": "2017-07-24"
+		            },
+			            "manualObj": null,
+			            "status": "completed",
+			            "faceMatched": false,
+			            "matchResult": null,
+			            "matchedInformation": null,
+			            "govResult": null,
+			            "request_id": "53e6719c-9f8f-4018-b7ad-fd4b24478be2",
+			            "created_by": "automatic",
+			            "_id": "5ea04e0dad178e7135373021",
+			            "docType": "ind_gst_certificate",
+			            "document1": "https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%gst.png",
+			            "belongsTo": "5df35fa819bd2a8d8663371c",
+			            "createdAt": "2020-04-22T14:00:57.289Z",
+			            "updatedAt": "2020-04-22T14:00:57.289Z",
+			            "__v": 0
+		        }
+		    }
+		}
+		}
+
 **Query Parameters**
 	
   * document1: Url of document
@@ -265,38 +266,38 @@ Returns quality of selfie image
 		--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAc3ByaW5nc2Nhbi5jb20iLCJ1c2VySWQiOiI1ZTMwN2IwNGNkNWQ5YTAzMTgwYzMwYWMiLCJpYXQiOjE1ODYzNDU0ODUsImV4cCI6MTU5NDk4NTQ4NX0.7WOKNdv-wZ21cYVKuE8tMF2waecvC1NGUqtyV9pDjKE' \
 		--header 'Content-Type: application/json' \
 		--data-raw '{
-			"selfie_url": "https://image.shutterstock.com/image-photo/pretty-mixed-race-woman-taking-260nw-363424883.jpg",
+			"selfie_url": "https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2Fme.jpg",
 			"person_id": "5ea03117af006f001c24ef50"
 		}'
 
 **Example Response**
  	.. code::
 
-	{
-	    "face_box": {
-	        "height": 100,
-	        "left": 194,
-	        "top": 66,
-	        "width": 66
-	    },
-	    "face_coverage": {
-	        "message": "too far from the camera",
-	        "percentage": 6,
-	        "status": "not_optimal"
-	    },
-	    "face_detected": true,
-	    "face_quality": {
-	        "message": "optimal",
-	        "status": "optimal"
-	    },
-	    "is_live": true,
-	    "multiple_faces_detected": false,
-	    "person_id": "5ea03117af006f001c24ef50",
-	    "is_updated_for_user": true,
-	    "selfie": {
-	        "url": "https://image.shutterstock.com/image-photo/pretty-mixed-race-woman-taking-260nw-363424883.jpg"
-	    }
-	}
+		{
+		"face_box": {
+		    "height": 100,
+		    "left": 194,
+		    "top": 66,
+		    "width": 66
+		},
+		"face_coverage": {
+		    "message": "too far from the camera",
+		    "percentage": 6,
+		    "status": "not_optimal"
+		},
+		"face_detected": true,
+		"face_quality": {
+		    "message": "optimal",
+		    "status": "optimal"
+		},
+		"is_live": true,
+		"multiple_faces_detected": false,
+		"person_id": "5ea03117af006f001c24ef50",
+		"is_updated_for_user": true,
+		"selfie": {
+		    "url": "https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2Fme.jpg"
+		}
+		}
 
 **Query Parameters**
 	* selfie_url: Hosting url or Base64 of selfie image
@@ -373,21 +374,21 @@ Does a compare of document and selfie, for a match. If User document image and u
 **Example Response**
  	.. code::
 		
-	{
-	    "matchResult": {
-	        "image_1": {
-	            "face_detected": true,
-	            "face_quality": "Good"
-	        },
-	        "image_2": {
-	            "face_detected": true,
-	            "face_quality": "Good"
-	        },
-	        "is_a_match": false,
-	        "match_score": 25.377161026000977,
-	        "review_recommended": false
-	    }
-}
+		{
+		"matchResult": {
+		    "image_1": {
+		        "face_detected": true,
+		        "face_quality": "Good"
+		    },
+		    "image_2": {
+		        "face_detected": true,
+		        "face_quality": "Good"
+		    },
+		    "is_a_match": false,
+		    "match_score": 25.377161026000977,
+		    "review_recommended": false
+		}
+		}
 
 
 **Query Parameters**
@@ -597,48 +598,48 @@ Masks an Aadhaar image to hide first 12 digits of Aadhaar ID number
 		--header 'Content-Type: application/json' \
 		--data-raw '{
 			"aadhaar_url": [
-				"https://pdf-reports-springrole.s3.amazonaws.com/ind_aadhaar_1574775334523.jpg",
-				"https://pdf-reports-springrole.s3.amazonaws.com/ind_aadhaar_1574775334523.jpg"],
+				"https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2Fme.jpg",
+				"https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2Fme2.jpg"],
 			"consent": true
 			}'
 
 **Example Response**
  	.. code::
 
-	[
-	    {
-	        "action": "mask",
-	        "completed_at": "2020-04-22T17:22:12+05:30",
-	        "created_at": "2020-04-22T17:22:08+05:30",
-	        "group_id": "b101b3d0-848f-11ea-b554-8b104684043b",
-	        "request_id": "f6dc6716-dc17-40ae-ad5f-13eff5ae6c1f",
-	        "result": {
-	            "document_url": "https://storage.googleapis.com/storage.idfy.com/15574d87-d6b1-425d-b2a5-85082625e55b.jpg?Expires=1587642732&GoogleAccessId=api-gateway-prod%40idfy-1338.iam.gserviceaccount.com&Signature=RGnVtMCA%2F86qBTptG1dbFDrF5HDFHlV35PnIWZCyf0Cx6tkirzEGkuN%2ByXIywn8S4OEs1msgKf0EE3JddvhzQbnQD8%2BCJjVeWSjqENUSIbdUgujK1XEQqg5RS0o3knbV1hkGRa410fZrA4wM%2B%2BTpCV7LBTQtgygNJQBou5mk5bXk%2FpsUH1X3iAkTMurGWfHpJr9PrSuXIFf%2Fp%2BcNHhoiUJ8Baoy6OaA1u9vvc7j%2Fi6Ke%2Fz3UgPbYa%2F5Rjvbuq8qgkAKSBxro2MNEJWUmvw2QsDvSERvCBa8k49xPhcc%2FDrNe%2Bw4OaEOQExmE41hyTNnEmHG7HOD1GgOTdv%2F0t%2Bd22A%3D%3D",
-	            "id_number_found": true,
-	            "original_document_url": "https://pdf-reports-springrole.s3.amazonaws.com/ind_aadhaar_1574775334523.jpg",
-	            "self_link": ""
-	        },
-	        "status": "completed",
-	        "task_id": "b1018cc0-848f-11ea-b554-8b104684043b",
-	        "type": "ind_aadhaar"
-	    },
-	    {
-	        "action": "mask",
-	        "completed_at": "2020-04-22T17:22:12+05:30",
-	        "created_at": "2020-04-22T17:22:08+05:30",
-	        "group_id": "b101b3d2-848f-11ea-b554-8b104684043b",
-	        "request_id": "c592ac66-00e4-4bab-9e81-7958b0655f81",
-	        "result": {
-	            "document_url": "https://storage.googleapis.com/storage.idfy.com/67cf2b89-156e-4e01-9c1b-6b34931e5dcd.jpg?Expires=1587642732&GoogleAccessId=api-gateway-prod%40idfy-1338.iam.gserviceaccount.com&Signature=ZNH8ZDIViftgZNqaEv56Jisx%2FOP30CtSp0u%2FClJAwowwDb29fNOoPihdmZ%2FhzNojbMsVms%2FnS%2FnF0EIamDwDkCNiN8tAsSauO6z3Mk5%2Br%2BscdZ7sNpwVZOmEZqTiXQXWDDH%2FiyKknJlDBAfe5G9%2B4SaxgrUOFcezrzl7RlvmthIpW%2F4AFX3nVyLVArBAwL1jdch9W11PhCSDCyxA1rxO4RBImXXd7guePak0lSgvd1TAOdfuPYVRP5gFEWHn4Ao9Er49BOlnHm9UI9GDF%2FD3AhJf6LO2Z9ZTc0%2FQcJ5z5ghqG5K5AhX%2F9d3eoLCjAx8ICnjtuYVOeO8YSyus8LArNw%3D%3D",
-	            "id_number_found": true,
-	            "original_document_url": "https://pdf-reports-springrole.s3.amazonaws.com/ind_aadhaar_1574775334523.jpg",
-	            "self_link": ""
-	        },
-	        "status": "completed",
-	        "task_id": "b101b3d1-848f-11ea-b554-8b104684043b",
-	        "type": "ind_aadhaar"
-	    }
-	]
+		[
+		{
+		    "action": "mask",
+		    "completed_at": "2020-04-22T17:22:12+05:30",
+		    "created_at": "2020-04-22T17:22:08+05:30",
+		    "group_id": "b101b3d0-848f-11ea-b554-8b104684043b",
+		    "request_id": "f6dc6716-dc17-40ae-ad5f-13eff5ae6c1f",
+		    "result": {
+		        "document_url": "https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2Fme1.jpg",
+		        "id_number_found": true,
+		        "original_document_url": "https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2Fme.jpg",
+		        "self_link": ""
+		    },
+			    "status": "completed",
+			    "task_id": "b1018cc0-848f-11ea-b554-8b104684043b",
+			    "type": "ind_aadhaar"
+		},
+		{
+		    "action": "mask",
+		    "completed_at": "2020-04-22T17:22:12+05:30",
+		    "created_at": "2020-04-22T17:22:08+05:30",
+		    "group_id": "b101b3d2-848f-11ea-b554-8b104684043b",
+		    "request_id": "c592ac66-00e4-4bab-9e81-7958b0655f81",
+		    "result": {
+		        "document_url": "https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2Fme4.jpg",
+		        "id_number_found": true,
+		        "original_document_url": "https%3A%2F%2Fpdf-reports-springrole.s3.amazonaws.com%2Fme2.jpg",
+		        "self_link": ""
+		    },
+			    "status": "completed",
+			    "task_id": "b101b3d1-848f-11ea-b554-8b104684043b",
+			    "type": "ind_aadhaar"
+		}
+		]
 
 **Query Parameters**
 	
